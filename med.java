@@ -97,6 +97,7 @@ public class med extends Agent{
 		addBehaviour(new TickerBehaviour(this,1800000) {
 			public void onStart() {}
 			public void onTick() {
+				addBehaviour(new getLogin());
 				addBehaviour(new giveTask());
 			}
 			
@@ -122,7 +123,7 @@ private class infoRequest extends CyclicBehaviour{
 		}
 	}
 
-	private class getCookie extends CyclicBehaviour{
+	private class getLogin extends CyclicBehaviour{
 		public void action() {
 			if(matric!= null && pass!= null) {
 			crawlerAgent web = new crawlerAgent();
